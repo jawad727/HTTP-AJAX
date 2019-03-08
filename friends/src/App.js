@@ -28,14 +28,14 @@ class App extends React.Component {
     event.preventDefault();
     axios 
       .post('http://localhost:5000/friends', friend)
-      .then(response => 
+      .then(res => 
         this.setState({
-          friends: response.data
+          friends: res.data
         })) 
         .catch(err => console.log(err));
   }
 
-  
+
   render() {
     return (
       <div className="App">

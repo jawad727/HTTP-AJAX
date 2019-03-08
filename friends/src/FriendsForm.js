@@ -23,7 +23,9 @@ class FriendsForm extends React.Component {
     }
 
     handleSubmit = event => {
+        event.preventDefault();
         this.props.addFriend(event, this.state.friend)
+        console.log(this.state.friend)
         this.setState({
             friend: {
             name: "",
@@ -32,6 +34,7 @@ class FriendsForm extends React.Component {
         }
         })
     }
+
 
     render() {
         return(
@@ -62,9 +65,9 @@ class FriendsForm extends React.Component {
                     onChange = {this.changeHandler}
                     value = {this.state.friend.email}
                    /> 
-                   
+                   <button type="submit">Add</button>
                 </form>
-                <button>Add</button>
+                
             </div>
         )
     }
